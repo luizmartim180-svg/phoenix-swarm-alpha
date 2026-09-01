@@ -3,600 +3,669 @@
         "id":  "inc-001",
         "source_system":  "aws-lambda",
         "severity":  3,
-        "description":  "Auto-generated incident inc-001 for aws-lambda",
-        "root_cause":  "Root cause for inc-001",
-        "resolution":  "Resolution for inc-001",
+        "description":  "P99 latency spike to 2.4s in payment Lambda during peak traffic, 12% failure rate on checkout endpoint",
+        "root_cause":  "Cold start + insufficient DB connection pooling; inadequate provisioned concurrency",
+        "resolution":  "Enable provisioned concurrency, increase memory to 2048MB, add RDS Proxy and implement connection pooling",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  1
+                         "region":  "us-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-002",
-        "source_system":  "tidb-cluster",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-002 for tidb-cluster",
-        "root_cause":  "Root cause for inc-002",
-        "resolution":  "Resolution for inc-002",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Burst of concurrent invocations causing connection storms to downstream RDS resulting in 503 errors",
+        "root_cause":  "No connection pooling + RDS max_connections reached",
+        "resolution":  "Introduce RDS Proxy, increase max_connections, add exponential backoff and circuit breaker",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  2
+                         "region":  "us-west-2",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-003",
-        "source_system":  "bedrock-api",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-003 for bedrock-api",
-        "root_cause":  "Root cause for inc-003",
-        "resolution":  "Resolution for inc-003",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Memory pressure and sporadic OOMs in image-processing Lambda causing retries and increased downstream queueing",
+        "root_cause":  "Memory leak in handler (large tensors) + no streaming processing",
+        "resolution":  "Refactor to stream processing, add memory limits and monitor with X-Ray",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  3
+                         "region":  "sa-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-004",
-        "source_system":  "k8s-pod",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-004 for k8s-pod",
-        "root_cause":  "Root cause for inc-004",
-        "resolution":  "Resolution for inc-004",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "P99 latency spike to 2.4s in payment Lambda during peak traffic, 12% failure rate on checkout endpoint",
+        "root_cause":  "Cold start + insufficient DB connection pooling; inadequate provisioned concurrency",
+        "resolution":  "Enable provisioned concurrency, increase memory to 2048MB, add RDS Proxy and implement connection pooling",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  4
+                         "region":  "eu-west-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-005",
-        "source_system":  "amazon-rds",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-005 for amazon-rds",
-        "root_cause":  "Root cause for inc-005",
-        "resolution":  "Resolution for inc-005",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Burst of concurrent invocations causing connection storms to downstream RDS resulting in 503 errors",
+        "root_cause":  "No connection pooling + RDS max_connections reached",
+        "resolution":  "Introduce RDS Proxy, increase max_connections, add exponential backoff and circuit breaker",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  5
+                         "region":  "us-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-006",
-        "source_system":  "ecs-fargate",
+        "source_system":  "aws-lambda",
         "severity":  3,
-        "description":  "Auto-generated incident inc-006 for ecs-fargate",
-        "root_cause":  "Root cause for inc-006",
-        "resolution":  "Resolution for inc-006",
+        "description":  "Memory pressure and sporadic OOMs in image-processing Lambda causing retries and increased downstream queueing",
+        "root_cause":  "Memory leak in handler (large tensors) + no streaming processing",
+        "resolution":  "Refactor to stream processing, add memory limits and monitor with X-Ray",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  6
+                         "region":  "us-west-2",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-007",
-        "source_system":  "s3-sync",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-007 for s3-sync",
-        "root_cause":  "Root cause for inc-007",
-        "resolution":  "Resolution for inc-007",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "P99 latency spike to 2.4s in payment Lambda during peak traffic, 12% failure rate on checkout endpoint",
+        "root_cause":  "Cold start + insufficient DB connection pooling; inadequate provisioned concurrency",
+        "resolution":  "Enable provisioned concurrency, increase memory to 2048MB, add RDS Proxy and implement connection pooling",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  7
+                         "region":  "sa-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-008",
-        "source_system":  "cloudfront",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-008 for cloudfront",
-        "root_cause":  "Root cause for inc-008",
-        "resolution":  "Resolution for inc-008",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Burst of concurrent invocations causing connection storms to downstream RDS resulting in 503 errors",
+        "root_cause":  "No connection pooling + RDS max_connections reached",
+        "resolution":  "Introduce RDS Proxy, increase max_connections, add exponential backoff and circuit breaker",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  8
+                         "region":  "eu-west-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-009",
         "source_system":  "aws-lambda",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-009 for aws-lambda",
-        "root_cause":  "Root cause for inc-009",
-        "resolution":  "Resolution for inc-009",
+        "severity":  3,
+        "description":  "Memory pressure and sporadic OOMs in image-processing Lambda causing retries and increased downstream queueing",
+        "root_cause":  "Memory leak in handler (large tensors) + no streaming processing",
+        "resolution":  "Refactor to stream processing, add memory limits and monitor with X-Ray",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  9
+                         "region":  "us-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-010",
-        "source_system":  "tidb-cluster",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-010 for tidb-cluster",
-        "root_cause":  "Root cause for inc-010",
-        "resolution":  "Resolution for inc-010",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "P99 latency spike to 2.4s in payment Lambda during peak traffic, 12% failure rate on checkout endpoint",
+        "root_cause":  "Cold start + insufficient DB connection pooling; inadequate provisioned concurrency",
+        "resolution":  "Enable provisioned concurrency, increase memory to 2048MB, add RDS Proxy and implement connection pooling",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  10
+                         "region":  "us-west-2",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-011",
-        "source_system":  "bedrock-api",
+        "source_system":  "aws-lambda",
         "severity":  3,
-        "description":  "Auto-generated incident inc-011 for bedrock-api",
-        "root_cause":  "Root cause for inc-011",
-        "resolution":  "Resolution for inc-011",
+        "description":  "Burst of concurrent invocations causing connection storms to downstream RDS resulting in 503 errors",
+        "root_cause":  "No connection pooling + RDS max_connections reached",
+        "resolution":  "Introduce RDS Proxy, increase max_connections, add exponential backoff and circuit breaker",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  11
+                         "region":  "sa-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-012",
-        "source_system":  "k8s-pod",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-012 for k8s-pod",
-        "root_cause":  "Root cause for inc-012",
-        "resolution":  "Resolution for inc-012",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Memory pressure and sporadic OOMs in image-processing Lambda causing retries and increased downstream queueing",
+        "root_cause":  "Memory leak in handler (large tensors) + no streaming processing",
+        "resolution":  "Refactor to stream processing, add memory limits and monitor with X-Ray",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  12
+                         "region":  "eu-west-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-013",
-        "source_system":  "amazon-rds",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-013 for amazon-rds",
-        "root_cause":  "Root cause for inc-013",
-        "resolution":  "Resolution for inc-013",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "P99 latency spike to 2.4s in payment Lambda during peak traffic, 12% failure rate on checkout endpoint",
+        "root_cause":  "Cold start + insufficient DB connection pooling; inadequate provisioned concurrency",
+        "resolution":  "Enable provisioned concurrency, increase memory to 2048MB, add RDS Proxy and implement connection pooling",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  13
+                         "region":  "us-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-014",
-        "source_system":  "ecs-fargate",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-014 for ecs-fargate",
-        "root_cause":  "Root cause for inc-014",
-        "resolution":  "Resolution for inc-014",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Burst of concurrent invocations causing connection storms to downstream RDS resulting in 503 errors",
+        "root_cause":  "No connection pooling + RDS max_connections reached",
+        "resolution":  "Introduce RDS Proxy, increase max_connections, add exponential backoff and circuit breaker",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  14
+                         "region":  "us-west-2",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-015",
-        "source_system":  "s3-sync",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-015 for s3-sync",
-        "root_cause":  "Root cause for inc-015",
-        "resolution":  "Resolution for inc-015",
+        "source_system":  "aws-lambda",
+        "severity":  3,
+        "description":  "Memory pressure and sporadic OOMs in image-processing Lambda causing retries and increased downstream queueing",
+        "root_cause":  "Memory leak in handler (large tensors) + no streaming processing",
+        "resolution":  "Refactor to stream processing, add memory limits and monitor with X-Ray",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  15
+                         "region":  "sa-east-1",
+                         "mttr_minutes":  45,
+                         "service":  "payments",
+                         "impact":  "high"
                      }
     },
     {
         "id":  "inc-016",
-        "source_system":  "cloudfront",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-016 for cloudfront",
-        "root_cause":  "Root cause for inc-016",
-        "resolution":  "Resolution for inc-016",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  16
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-017",
-        "source_system":  "aws-lambda",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-017 for aws-lambda",
-        "root_cause":  "Root cause for inc-017",
-        "resolution":  "Resolution for inc-017",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  17
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-018",
         "source_system":  "tidb-cluster",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-018 for tidb-cluster",
-        "root_cause":  "Root cause for inc-018",
-        "resolution":  "Resolution for inc-018",
+        "severity":  4,
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  18
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-019",
-        "source_system":  "bedrock-api",
+        "source_system":  "tidb-cluster",
         "severity":  4,
-        "description":  "Auto-generated incident inc-019 for bedrock-api",
-        "root_cause":  "Root cause for inc-019",
-        "resolution":  "Resolution for inc-019",
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  19
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-020",
-        "source_system":  "k8s-pod",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-020 for k8s-pod",
-        "root_cause":  "Root cause for inc-020",
-        "resolution":  "Resolution for inc-020",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  20
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-021",
-        "source_system":  "amazon-rds",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-021 for amazon-rds",
-        "root_cause":  "Root cause for inc-021",
-        "resolution":  "Resolution for inc-021",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  21
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-022",
-        "source_system":  "ecs-fargate",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-022 for ecs-fargate",
-        "root_cause":  "Root cause for inc-022",
-        "resolution":  "Resolution for inc-022",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  22
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-023",
-        "source_system":  "s3-sync",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-023 for s3-sync",
-        "root_cause":  "Root cause for inc-023",
-        "resolution":  "Resolution for inc-023",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  23
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-024",
-        "source_system":  "cloudfront",
+        "source_system":  "tidb-cluster",
         "severity":  4,
-        "description":  "Auto-generated incident inc-024 for cloudfront",
-        "root_cause":  "Root cause for inc-024",
-        "resolution":  "Resolution for inc-024",
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  24
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-025",
-        "source_system":  "aws-lambda",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-025 for aws-lambda",
-        "root_cause":  "Root cause for inc-025",
-        "resolution":  "Resolution for inc-025",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  25
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-026",
         "source_system":  "tidb-cluster",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-026 for tidb-cluster",
-        "root_cause":  "Root cause for inc-026",
-        "resolution":  "Resolution for inc-026",
+        "severity":  4,
+        "description":  "KV leader imbalance causing hotspots and increased read timeouts on a subset of tenants",
+        "root_cause":  "Skewed partitioning and timestamp oracle overload leading to leader churn",
+        "resolution":  "Rebalance leadership, tune placement rules and increase tso throughput",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  26
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-027",
-        "source_system":  "bedrock-api",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-027 for bedrock-api",
-        "root_cause":  "Root cause for inc-027",
-        "resolution":  "Resolution for inc-027",
+        "source_system":  "tidb-cluster",
+        "severity":  4,
+        "description":  "Read latency P99 spiked to 850ms during bulk import of 200M product records",
+        "root_cause":  "TiKV compaction backlog from massive SST creation; LSM saturation",
+        "resolution":  "Throttle imports, trigger manual compaction, tune region split and schedule offline window",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  27
+                         "region":  "sa-east-1",
+                         "cluster":  "prod-br-01",
+                         "mttr_minutes":  120,
+                         "nodes":  6
                      }
     },
     {
         "id":  "inc-028",
-        "source_system":  "k8s-pod",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-028 for k8s-pod",
-        "root_cause":  "Root cause for inc-028",
-        "resolution":  "Resolution for inc-028",
+        "source_system":  "bedrock-api",
+        "severity":  4,
+        "description":  "Intermittent 5xx from Bedrock chat model during high-concurrency scoring",
+        "root_cause":  "Model cold-start on demand + transient upstream errors not retried",
+        "resolution":  "Add retry with backoff, circuit breaker, and fallback cached responses",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  28
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-029",
-        "source_system":  "amazon-rds",
+        "source_system":  "bedrock-api",
         "severity":  4,
-        "description":  "Auto-generated incident inc-029 for amazon-rds",
-        "root_cause":  "Root cause for inc-029",
-        "resolution":  "Resolution for inc-029",
+        "description":  "Titan Embeddings V2 returning 429 Too Many Requests during batch vectorization",
+        "root_cause":  "Exceeded RPM quota and no retry/backoff implemented",
+        "resolution":  "Request quota increase, implement exponential backoff with jitter, add local cache for repeated embeddings",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  29
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-030",
-        "source_system":  "ecs-fargate",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-030 for ecs-fargate",
-        "root_cause":  "Root cause for inc-030",
-        "resolution":  "Resolution for inc-030",
+        "source_system":  "bedrock-api",
+        "severity":  4,
+        "description":  "Intermittent 5xx from Bedrock chat model during high-concurrency scoring",
+        "root_cause":  "Model cold-start on demand + transient upstream errors not retried",
+        "resolution":  "Add retry with backoff, circuit breaker, and fallback cached responses",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  30
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-031",
-        "source_system":  "s3-sync",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-031 for s3-sync",
-        "root_cause":  "Root cause for inc-031",
-        "resolution":  "Resolution for inc-031",
+        "source_system":  "bedrock-api",
+        "severity":  4,
+        "description":  "Titan Embeddings V2 returning 429 Too Many Requests during batch vectorization",
+        "root_cause":  "Exceeded RPM quota and no retry/backoff implemented",
+        "resolution":  "Request quota increase, implement exponential backoff with jitter, add local cache for repeated embeddings",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  31
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-032",
-        "source_system":  "cloudfront",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-032 for cloudfront",
-        "root_cause":  "Root cause for inc-032",
-        "resolution":  "Resolution for inc-032",
+        "source_system":  "bedrock-api",
+        "severity":  4,
+        "description":  "Intermittent 5xx from Bedrock chat model during high-concurrency scoring",
+        "root_cause":  "Model cold-start on demand + transient upstream errors not retried",
+        "resolution":  "Add retry with backoff, circuit breaker, and fallback cached responses",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  32
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-033",
-        "source_system":  "aws-lambda",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-033 for aws-lambda",
-        "root_cause":  "Root cause for inc-033",
-        "resolution":  "Resolution for inc-033",
+        "source_system":  "bedrock-api",
+        "severity":  4,
+        "description":  "Titan Embeddings V2 returning 429 Too Many Requests during batch vectorization",
+        "root_cause":  "Exceeded RPM quota and no retry/backoff implemented",
+        "resolution":  "Request quota increase, implement exponential backoff with jitter, add local cache for repeated embeddings",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  33
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-034",
-        "source_system":  "tidb-cluster",
+        "source_system":  "bedrock-api",
         "severity":  4,
-        "description":  "Auto-generated incident inc-034 for tidb-cluster",
-        "root_cause":  "Root cause for inc-034",
-        "resolution":  "Resolution for inc-034",
+        "description":  "Intermittent 5xx from Bedrock chat model during high-concurrency scoring",
+        "root_cause":  "Model cold-start on demand + transient upstream errors not retried",
+        "resolution":  "Add retry with backoff, circuit breaker, and fallback cached responses",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  34
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-035",
         "source_system":  "bedrock-api",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-035 for bedrock-api",
-        "root_cause":  "Root cause for inc-035",
-        "resolution":  "Resolution for inc-035",
+        "severity":  4,
+        "description":  "Titan Embeddings V2 returning 429 Too Many Requests during batch vectorization",
+        "root_cause":  "Exceeded RPM quota and no retry/backoff implemented",
+        "resolution":  "Request quota increase, implement exponential backoff with jitter, add local cache for repeated embeddings",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  35
+                         "account":  "acct-xyz",
+                         "model":  "amazon.titan-embed-text-v2",
+                         "rpm_limit":  1000
                      }
     },
     {
         "id":  "inc-036",
         "source_system":  "k8s-pod",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-036 for k8s-pod",
-        "root_cause":  "Root cause for inc-036",
-        "resolution":  "Resolution for inc-036",
+        "severity":  5,
+        "description":  "Liveness probe flapping causing frequent restarts under steady load",
+        "root_cause":  "Aggressive GC pause times and insufficient resource requests",
+        "resolution":  "Tune requests/limits, improve probes, and add horizontal autoscaler rules",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  36
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-037",
-        "source_system":  "amazon-rds",
+        "source_system":  "k8s-pod",
         "severity":  5,
-        "description":  "Auto-generated incident inc-037 for amazon-rds",
-        "root_cause":  "Root cause for inc-037",
-        "resolution":  "Resolution for inc-037",
+        "description":  "AI agent orchestrator pod OOMKilled every 15m during multi-step reasoning",
+        "root_cause":  "Memory leak in state buffer; no pruning between turns",
+        "resolution":  "Implement state TTL, add memory limits (4Gi), prune state and upgrade libs",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  37
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-038",
-        "source_system":  "ecs-fargate",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-038 for ecs-fargate",
-        "root_cause":  "Root cause for inc-038",
-        "resolution":  "Resolution for inc-038",
+        "source_system":  "k8s-pod",
+        "severity":  5,
+        "description":  "Liveness probe flapping causing frequent restarts under steady load",
+        "root_cause":  "Aggressive GC pause times and insufficient resource requests",
+        "resolution":  "Tune requests/limits, improve probes, and add horizontal autoscaler rules",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  38
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-039",
-        "source_system":  "s3-sync",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-039 for s3-sync",
-        "root_cause":  "Root cause for inc-039",
-        "resolution":  "Resolution for inc-039",
+        "source_system":  "k8s-pod",
+        "severity":  5,
+        "description":  "AI agent orchestrator pod OOMKilled every 15m during multi-step reasoning",
+        "root_cause":  "Memory leak in state buffer; no pruning between turns",
+        "resolution":  "Implement state TTL, add memory limits (4Gi), prune state and upgrade libs",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  39
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-040",
-        "source_system":  "cloudfront",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-040 for cloudfront",
-        "root_cause":  "Root cause for inc-040",
-        "resolution":  "Resolution for inc-040",
+        "source_system":  "k8s-pod",
+        "severity":  5,
+        "description":  "Liveness probe flapping causing frequent restarts under steady load",
+        "root_cause":  "Aggressive GC pause times and insufficient resource requests",
+        "resolution":  "Tune requests/limits, improve probes, and add horizontal autoscaler rules",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  40
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-041",
-        "source_system":  "aws-lambda",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-041 for aws-lambda",
-        "root_cause":  "Root cause for inc-041",
-        "resolution":  "Resolution for inc-041",
+        "source_system":  "k8s-pod",
+        "severity":  5,
+        "description":  "AI agent orchestrator pod OOMKilled every 15m during multi-step reasoning",
+        "root_cause":  "Memory leak in state buffer; no pruning between turns",
+        "resolution":  "Implement state TTL, add memory limits (4Gi), prune state and upgrade libs",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  41
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-042",
-        "source_system":  "tidb-cluster",
+        "source_system":  "k8s-pod",
         "severity":  5,
-        "description":  "Auto-generated incident inc-042 for tidb-cluster",
-        "root_cause":  "Root cause for inc-042",
-        "resolution":  "Resolution for inc-042",
+        "description":  "Liveness probe flapping causing frequent restarts under steady load",
+        "root_cause":  "Aggressive GC pause times and insufficient resource requests",
+        "resolution":  "Tune requests/limits, improve probes, and add horizontal autoscaler rules",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  42
+                         "namespace":  "ai-agents",
+                         "memory_limit":  "4Gi",
+                         "pod":  "orchestrator-7x9k2"
                      }
     },
     {
         "id":  "inc-043",
-        "source_system":  "bedrock-api",
-        "severity":  2,
-        "description":  "Auto-generated incident inc-043 for bedrock-api",
-        "root_cause":  "Root cause for inc-043",
-        "resolution":  "Resolution for inc-043",
+        "source_system":  "amazon-rds",
+        "severity":  5,
+        "description":  "Aurora replica lag \u003e5s during analytics queries causing stale RAG context",
+        "root_cause":  "Long-running analytics blocking WAL replay; no query routing separation",
+        "resolution":  "Move analytics to dedicated replicas, implement query timeouts and route RAG reads appropriately",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  43
+                         "engine":  "aurora-postgresql",
+                         "replicas":  3
                      }
     },
     {
         "id":  "inc-044",
-        "source_system":  "k8s-pod",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-044 for k8s-pod",
-        "root_cause":  "Root cause for inc-044",
-        "resolution":  "Resolution for inc-044",
+        "source_system":  "amazon-rds",
+        "severity":  5,
+        "description":  "Connection drops due to parameter group misconfiguration under load",
+        "root_cause":  "Insufficient max_connections and sudden connection storms",
+        "resolution":  "Tune parameter group, add proxy layer and increase connection capacity",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  44
+                         "engine":  "aurora-postgresql",
+                         "replicas":  3
                      }
     },
     {
         "id":  "inc-045",
         "source_system":  "amazon-rds",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-045 for amazon-rds",
-        "root_cause":  "Root cause for inc-045",
-        "resolution":  "Resolution for inc-045",
+        "severity":  5,
+        "description":  "Aurora replica lag \u003e5s during analytics queries causing stale RAG context",
+        "root_cause":  "Long-running analytics blocking WAL replay; no query routing separation",
+        "resolution":  "Move analytics to dedicated replicas, implement query timeouts and route RAG reads appropriately",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  45
+                         "engine":  "aurora-postgresql",
+                         "replicas":  3
                      }
     },
     {
         "id":  "inc-046",
-        "source_system":  "ecs-fargate",
-        "severity":  3,
-        "description":  "Auto-generated incident inc-046 for ecs-fargate",
-        "root_cause":  "Root cause for inc-046",
-        "resolution":  "Resolution for inc-046",
+        "source_system":  "amazon-rds",
+        "severity":  2,
+        "description":  "Connection drops due to parameter group misconfiguration under load",
+        "root_cause":  "Insufficient max_connections and sudden connection storms",
+        "resolution":  "Tune parameter group, add proxy layer and increase connection capacity",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  46
+                         "engine":  "aurora-postgresql",
+                         "replicas":  3
                      }
     },
     {
         "id":  "inc-047",
-        "source_system":  "s3-sync",
-        "severity":  5,
-        "description":  "Auto-generated incident inc-047 for s3-sync",
-        "root_cause":  "Root cause for inc-047",
-        "resolution":  "Resolution for inc-047",
+        "source_system":  "amazon-rds",
+        "severity":  2,
+        "description":  "Aurora replica lag \u003e5s during analytics queries causing stale RAG context",
+        "root_cause":  "Long-running analytics blocking WAL replay; no query routing separation",
+        "resolution":  "Move analytics to dedicated replicas, implement query timeouts and route RAG reads appropriately",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  47
+                         "engine":  "aurora-postgresql",
+                         "replicas":  3
                      }
     },
     {
         "id":  "inc-048",
-        "source_system":  "cloudfront",
+        "source_system":  "ecs-fargate",
         "severity":  2,
-        "description":  "Auto-generated incident inc-048 for cloudfront",
-        "root_cause":  "Root cause for inc-048",
-        "resolution":  "Resolution for inc-048",
+        "description":  "Task restart loops due to failing sidecar initialization during rolling deploys",
+        "root_cause":  "Race condition in startup ordering and missing health-check dependencies",
+        "resolution":  "Add init containers, retry on transient failures and improve deploy sequencing",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  48
+                         "cluster":  "ecs-prod",
+                         "service":  "worker-pool"
                      }
     },
     {
         "id":  "inc-049",
-        "source_system":  "aws-lambda",
-        "severity":  4,
-        "description":  "Auto-generated incident inc-049 for aws-lambda",
-        "root_cause":  "Root cause for inc-049",
-        "resolution":  "Resolution for inc-049",
+        "source_system":  "ecs-fargate",
+        "severity":  2,
+        "description":  "Task restart loops due to failing sidecar initialization during rolling deploys",
+        "root_cause":  "Race condition in startup ordering and missing health-check dependencies",
+        "resolution":  "Add init containers, retry on transient failures and improve deploy sequencing",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  49
+                         "cluster":  "ecs-prod",
+                         "service":  "worker-pool"
                      }
     },
     {
         "id":  "inc-050",
-        "source_system":  "tidb-cluster",
-        "severity":  1,
-        "description":  "Auto-generated incident inc-050 for tidb-cluster",
-        "root_cause":  "Root cause for inc-050",
-        "resolution":  "Resolution for inc-050",
+        "source_system":  "s3-sync",
+        "severity":  2,
+        "description":  "S3 sync job missed files and produced partial index leading to RAG stale documents",
+        "root_cause":  "Multipart upload race and eventual consistency assumptions in listing",
+        "resolution":  "Use object versioning, verify checksums and add reconciliation job with idempotency",
         "metadata":  {
-                         "sample":  "auto",
-                         "index":  50
+                         "bucket":  "kb-backups",
+                         "region":  "us-west-2"
                      }
     }
 ]
