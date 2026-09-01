@@ -17,7 +17,7 @@ class BedrockClient:
         try:
             response = self.client.invoke_model(
                 modelId=settings.BEDROCK_EMBED_MODEL,
-                body=json.dumps({"inputText": text[:8192]})  # Titan max tokens
+                body=json.dumps({"inputText": text[:8192], "dimensions": 1024})  # Titan max tokens
             )
             result = json.loads(response["body"].read())
             return result["embedding"]
@@ -74,3 +74,15 @@ Classify severity (1-5) and suggest immediate action. Respond in JSON:
         )
         result = json.loads(response["body"].read())
         return json.loads(result["content"][0]["text"])
+
+    def chat(self, prompt: str, system: str = "", max_tokens: int = 600) -> str:
+        body = {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": max_tokens,
+            "messages": [{"role": "user", "content": prompt}],
+        }
+        if system:
+            body["system"] = system
+        response = self.client.invoke_model(modelId=settings.BEDROCK_CHAT_MODEL, body=json.dumps(body))
+        result = json.loads(response["body"].read())
+        return result["content"][0]["text"]

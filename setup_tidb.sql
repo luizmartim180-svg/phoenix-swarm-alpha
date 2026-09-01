@@ -13,12 +13,13 @@ CREATE TABLE IF NOT EXISTS infra_incidents (
     description TEXT NOT NULL,
     root_cause TEXT,
     resolution TEXT,
-    embedding VECTOR(1536) COMMENT 'Titan V2 embeddings',
+    embedding VECTOR(1024) COMMENT 'Titan V2 embeddings (1024)',
     metadata JSON COMMENT 'Contexto adicional estruturado',
     INDEX idx_severity (severity),
-    INDEX idx_source (source_system),
-    VECTOR INDEX idx_vec_cosine ((embedding)) WITH (distance_metric='cosine', type='hnsw')
+    INDEX idx_source (source_system)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE infra_incidents ADD VECTOR INDEX idx_vec_cosine ((embedding) WITH (DISTANCE=COSINE, TYPE=HNSW));
 
 -- Estado compartilhado do swarm (memória transacional entre agentes)
 CREATE TABLE IF NOT EXISTS swarm_state (

@@ -15,3 +15,8 @@ venv/
 
 # node
 node_modules/
+
+# packaging/test
+.pytest_cache/
+*.egg-info/
+.venv/

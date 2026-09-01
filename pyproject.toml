@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phoenix-swarm-alpha"
+version = "1.0.0"
+description = "Self-healing infrastructure swarm with autonomous agents on TiDB Cloud + Amazon Bedrock"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Phoenix Zero Team" }]
+dependencies = [
+    "pymysql==1.1.1",
+    "cryptography==43.0.1",
+    "boto3==1.35.27",
+    "streamlit==1.38.0",
+    "requests==2.32.3",
+    "python-dotenv==1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.3"]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "config*", "core*"]

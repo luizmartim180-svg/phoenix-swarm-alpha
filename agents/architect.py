@@ -4,6 +4,7 @@ Usa vector search híbrido no TiDB para encontrar resoluções históricas
 e gera propostas de correção estruturadas via Bedrock.
 """
 import logging
+import json
 from typing import Dict, Any, List
 from core.tidb_client import TiDBClient
 from core.bedrock_client import BedrockClient
@@ -64,19 +65,8 @@ Historical Resolutions:
 Propose a fix following the JSON schema."""
 
         # Chama Bedrock para gerar proposta
-        import boto3, json
-        client = boto3.client("bedrock-runtime", region_name="us-east-1")
-        response = client.invoke_model(
-            modelId="anthropic.claude-3-haiku-20240307-v1:0",
-            body=json.dumps({
-                "anthropic_version": "bedrock-2023-05-31",
-                "max_tokens": 600,
-                "system": self.SYSTEM_PROMPT,
-                "messages": [{"role": "user", "content": prompt}]
-            })
-        )
-        result_body = json.loads(response["body"].read())
-        proposal = json.loads(result_body["content"][0]["text"])
+        raw = self.bedrock.chat(prompt=prompt, system=self.SYSTEM_PROMPT, max_tokens=600)
+        proposal = json.loads(raw)
 
         output = {
             "task_id": task_id,
