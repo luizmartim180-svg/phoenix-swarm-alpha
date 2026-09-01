@@ -1,0 +1,20 @@
+[
+  {
+    "id": "inc-001",
+    "source_system": "aws-lambda",
+    "severity": 4,
+    "description": "Lambda timeout spike in payment processing",
+    "root_cause": "Cold start + downstream DB latency",
+    "resolution": "Increase memory + add connection pooling",
+    "metadata": {"service":"payments","region":"us-east-1"}
+  },
+  {
+    "id": "inc-002",
+    "source_system": "tidb-cluster",
+    "severity": 3,
+    "description": "TiKV node compaction causing read latency",
+    "root_cause": "Large SST files from bulk import",
+    "resolution": "Trigger manual compaction + adjust region size",
+    "metadata": {"cluster":"prod-br","nodes":3}
+  }
+]

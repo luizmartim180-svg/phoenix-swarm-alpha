@@ -1,0 +1,17 @@
+__pycache__/
+.env
+.env.*
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+venv/
+.env.local
+*.sqlite3
+*.log
+
+# Streamlit
+.streamlit/
+
+# node
+node_modules/
