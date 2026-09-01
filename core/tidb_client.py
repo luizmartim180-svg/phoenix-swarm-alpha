@@ -1,7 +1,9 @@
-import pymysql
+﻿import pymysql
 import json
 import requests
 import logging
+import platform
+import os
 from typing import List, Dict, Any, Optional
 from config.settings import settings
 
@@ -17,13 +19,17 @@ class TiDBClient:
     @property
     def conn(self):
         if self._conn is None or not getattr(self._conn, 'open', True):
+            # SSL CA path depends on platform; Windows typically uses the OS store
+            default_ca = None if platform.system() == "Windows" else "/etc/ssl/certs/ca-certificates.crt"
+            ca = getattr(settings, 'TIDB_SSL_CA', None) or default_ca
+            ssl_arg = {"ca": ca} if ca else {}
             self._conn = pymysql.connect(
                 host=settings.TIDB_HOST,
                 user=settings.TIDB_USER,
                 password=settings.TIDB_PASSWORD,
                 database=settings.TIDB_DB,
                 port=settings.TIDB_PORT,
-                ssl={"ca": "/etc/ssl/certs/ca-certificates.crt"},
+                ssl=ssl_arg,
                 connect_timeout=10,
                 charset="utf8mb4"
             )
